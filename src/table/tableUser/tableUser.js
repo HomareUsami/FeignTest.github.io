@@ -56,7 +56,7 @@ function registUserTable(userName, user) {
     var userTableRawElement = feignTableElement.appendChild(document.createElement("tr"));
     user.tableRawElement = userTableRawElement; // userとしてtableElemを覚えておく。
 	userTableRawElement.user = user;
-	
+
     // drag
     registDragFunctionUserTableRaw(userTableRawElement);
 
@@ -72,8 +72,36 @@ function registUserTable(userName, user) {
     // name
     var userNameElement = userTableRawElement.appendChild(document.createElement("td"));
     userNameElement.id = userNameTableRawId;
-    userNameElement.appendChild(document.createTextNode(userName));
+    var userNameAra = userNameElement.appendChild(document.createElement("input"));
+	userNameAra.type = "text";
+	userNameAra.placeholder = "user名";
+	userNameAra.user = user;
+	userNameAra.value = userName;
 
+	// 途中でも名前を変更できるように
+	userNameAra.onchange = (changeEvent) => {
+		var changeName = changeEvent.currentTarget.value;
+
+		var isError = false;
+		for(var i = 0;  i < users.length; ++i) {
+			var nowUser = users[i];
+			if(nowUser == user) continue;
+			if(nowUser.name == changeName) {
+				isError = true;
+				break;
+			}
+		}
+		if(isError) {
+			alert("既に[" + changeName + "]のユーザーは存在します");
+			// 元の名前に戻す
+			changeEvent.currentTarget.value = user.name;
+			return;
+		}
+
+		user.name = changeName;
+		updateUser(user);
+	};
+	
     // post
     createUserPostTableData(userTableRawElement, user);
 

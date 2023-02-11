@@ -116,6 +116,10 @@ function changeOrderUserImpl(insertFromUserName, insertToUserName, isBefore) {
 	var fromUser = getUser(insertFromUserName);
 	var toUser = getUser(insertToUserName);
 
+	// セーフティ
+	if(fromUser == null) return;
+	if(toUser == null) return;
+
 	var insertIndex = isBefore ? toUser.index : toUser.index + 1;
 	var fromIndex = fromUser.index;
 
