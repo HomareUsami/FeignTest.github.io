@@ -60,7 +60,7 @@ function addRawNowDayElement() {
             addRawNowDayElementHeader(tableRawElement);
         } else if (isUserTableRaw(tableRawElement)) {
             // userの場合
-            addUserDayElement(tableRawElement,day);
+            addUserDayElement(tableRawElement,day,tableRawElement.user);
         }
     }
 }
