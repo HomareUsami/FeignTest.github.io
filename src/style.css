@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/*feignTableのcss設定*/
+table#feignTable {
+    /*セルの線を重ねる*/
+    border-collapse: collapse;
+}
+
+/*table header & table data*/
+th {
+    /*余白指定*/
+    padding: 5px;
+}
+
+td {
+    /*余白指定*/
+    padding: 5px;
+}
+
+/*memo欄*/
+textarea#memoArea {
+    /*size指定*/
+    width: 1000px;
+    height: 150px;
+}
+textarea#UserRegistArray {
+    /*size指定*/
+    width: 300px;
+    height: 100px;
+}
+
+/*https://blog.ver001.com/javascript-css-dropdownlist/#toc12*/
+div.selectWindowParent {
+    position: relative; /*要素を相対的な位置に置くためにに用意*/
+    width: max-content; /*要素のサイズに合わせる*/
+    height: max-content; /*要素のサイズに合わせる*/
+    top: 0em;
+    left: -5px;
+    padding: 0em; /*pading*/
+}
+div.selectWindow {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); /*shadow*/
+    padding: 0em; /*pading*/
+    position: absolute;
+    width: max-content; /*要素のサイズに合わせる*/
+    height: max-content; /*要素のサイズに合わせる*/
+    top: 1em;
+    left : 0em;
+    background-color: white; /*背景色*/
+    box-sizing: border-box;
+    z-index: 999; /*一番上に来るようにz軸上の優先度を設定*/
+}
+div.selectWindow ul {
+	list-style-type:none; /*listはnoneなため●が出来たりしない。*/
+	padding: 0; /*paddingを0にしてliとの隙間を作らない*/
+    margin: 2px;
+}
+div.selectWindow ul li {
+	display:inline-block; /*横並びを指定*/
+    vertical-align: top;
+	cursor:pointer; /*上に来た時にpointerにするようにカーソルを指定*/
+	padding-left:3px;
+	padding-right:3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}

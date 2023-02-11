@@ -1,1 +1,51 @@
-HelloWorld!!
+<html>
+
+<head>
+    <title>FeignTest</title>
+    <!--style css-->
+    <link rel="stylesheet" href="src/style.css" type="text/css">
+</head>
+
+<body>
+    <!--全体クリックチェック用div-->
+    <div id="window">
+        <!--javascript読み込み-->
+        <script src="src/main.js" charset="utf-8"></script>
+        <!--スラバカメイン画像-->
+        <img src="image/test/test.png" style="width: 600px; height: auto;">
+        <br>
+        <!--各種ボタン-->
+        <button onclick="callAddDay()">翌日</button>
+        <button onclick="callReset()">reset</button>
+        <button onclick="callResetDay()">日数リセット</button>
+
+        <!--各種登録table-->
+        <!--基本src/table.jsで詳細は定義される-->
+        <br>
+        <br>
+        <table border="1" id="feignTable">
+        </table>
+
+        <!--user登録-->
+        <br>
+        <br>
+        <input type="text" name="UserRegist" size="30" id="UserRegist" placeholder="user名">
+        <button onclick="callUserRegist()">User登録</button>
+        <br>
+        <textarea id="UserRegistArray" name="UserRegistArray" placeholder="一括User入力欄改行すれば2人目、3人目とまとめて登録できます。"
+            size="30"></textarea>
+        <button onclick="callUserRegistArray()">一括User登録</button>
+
+        <!--memo-->
+        <br>
+        <br>
+        <br>
+        <textarea id="memoArea" name="memo" placeholder="メモ入力欄"></textarea>
+
+        <!--余裕があればtreenode型に変更したい-->
+        <h2>説明</h2>
+        <p></p>
+    </div>
+</body>
+
+</html>
