@@ -29,8 +29,8 @@ function resetTable() {
     createAllUserTable(feignTableElement);
 
     // 仮 テスト追加が面倒だったので、削除する
-    if (0 && users.length == 0) {
-        var userName = "a";
+    if (1 && users.length == 0) {
+        var userName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         var user = userRegist(userName);   // user登録
         // table対応
         registUserTable(userName, user);

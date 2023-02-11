@@ -69,8 +69,9 @@ function getUserNameByTableRaw(tableRawElement) {
     return tableData.innerHTML;
 }
 
-function setUserInputElement(element, user) {
-	element.style.width = element.style.height = "20px";
+function setUserInputElement(element, user, isImage) {
+	element.style.width = isImage ? "20px" : "auto";
+	element.style.height = "20px";
 	element.style.display = "inline-block";
 	element.user = user; // user情報を保持
 	element.style.margin = "0px";
@@ -86,7 +87,7 @@ function createUserInputElement(parentNode, user, isImage) {
 		userInputElement = parentNode.appendChild(document.createElement("p"));
 		userInputElement.innerHTML = user.name;
 	}
-	setUserInputElement(userInputElement, user);
+	setUserInputElement(userInputElement, user, isImage);
 	return userInputElement;
 }
 
@@ -96,7 +97,7 @@ function updateUserInputElement(userInputElement, user) {
 	var newUserInputElement = document.createElement(isImage ? "img" : "p");
 	if (isImage) newUserInputElement.src = user.characterImage;
 	else newUserInputElement.innerHTML = user.name;
-	setUserInputElement(newUserInputElement);
+	setUserInputElement(newUserInputElement, isImage);
 	userInputElement.replaceWith(newUserInputElement);
 	userInputElement = newUserInputElement;
 }
@@ -262,7 +263,8 @@ function createSelectUser(parentNode, onClick,selectWindowElement) {
             // imageない
             var buttonElement = liElement.appendChild(document.createElement("button"));
             buttonElement.innerHTML = users[i].name;
-            buttonElement.style.width = buttonElement.style.height = "20px";
+            buttonElement.style.width = "auto";
+			buttonElement.style.height = "20px";
 			setOnClick(buttonElement, users[i], false);
         }
     }
