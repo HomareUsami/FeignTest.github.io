@@ -118,6 +118,11 @@ function registUserTable(userName, user) {
 		userNameDataElement.style.display = "block";
 		userNameAra.style.display = "none";
 	};
+	// フォーカスが外れた時処理
+	userNameAra.onblur = (blurEvent) => {
+		userNameDataElement.style.display = "block";
+		userNameAra.style.display = "none";
+	};
 	
     // post
     createUserPostTableData(userTableRawElement, user);
