@@ -68,34 +68,55 @@ function registUserTable(userName, user) {
     var userNameElement = userTableRawElement.appendChild(document.createElement("td"));
     userNameElement.id = userNameTableRawId;
 	userNameElement.user = user;
+	var userNameDataElement = userNameElement.appendChild(document.createElement("p"));
+	userNameDataElement.user = user;
+	userNameDataElement.innerHTML = userName;
+	userNameDataElement.style.display = "block";
+	userNameDataElement.onclick = (clickEvent) => {
+		window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
+		userNameDataElement.style.display = "none";
+		userNameAra.style.display = "block";
+		userNameAra.focus(); // 強制的にフォーカスする
+	};
+
     var userNameAra = userNameElement.appendChild(document.createElement("input"));
 	userNameAra.type = "text";
 	userNameAra.placeholder = "user名";
 	userNameAra.user = user;
 	userNameAra.value = userName;
+	userNameAra.style.display = "none"; // 最初非表示
 
 	// 途中でも名前を変更できるように
 	userNameAra.onchange = (changeEvent) => {
 		var changeName = changeEvent.currentTarget.value;
 
-		var isError = false;
-		for(var i = 0;  i < users.length; ++i) {
-			var nowUser = users[i];
-			if(nowUser == user) continue;
-			if(nowUser.name == changeName) {
-				isError = true;
-				break;
-			}
-		}
-		if(isError) {
-			alert("既に[" + changeName + "]のユーザーは存在します");
-			// 元の名前に戻す
-			changeEvent.currentTarget.value = user.name;
-			return;
+		// user名がかぶってないかチェック。
+		var isError = changeName == "" ? true : false;
+		var isNoName = isError;
+		if(!isError) {
+			for(var i = 0;  i < users.length; ++i) {
+				var nowUser = users[i];
+				if(nowUser == user) continue;
+				if(nowUser.name == changeName) {
+					isError = true;
+					break;
+				}
+			}	
 		}
 
-		user.name = changeName;
-		updateUser(user);
+		if(isError) {
+			alert(isNoName ? "user名を空には出来ません" : "既に[" + changeName + "]のユーザーは存在します");
+			// 元の名前に戻す
+			changeEvent.currentTarget.value = user.name;
+		} else {
+			userNameDataElement.innerHTML = changeName;
+			changeEvent.currentTarget.value = changeName;
+			user.name = changeName;
+			updateUser(user);
+		}
+
+		userNameDataElement.style.display = "block";
+		userNameAra.style.display = "none";
 	};
 	
     // post
