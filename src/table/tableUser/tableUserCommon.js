@@ -66,7 +66,7 @@ function getUserNameTableDataByTableRaw(tableRawElement) {
 function getUserNameByTableRaw(tableRawElement) {
     var tableData = getUserNameTableDataByTableRaw(tableRawElement);
     if (tableData == null) return "errorName";
-    return tableData.innerHTML;
+    return tableData.user.name;
 }
 
 function setUserInputElement(element, user, isImage) {

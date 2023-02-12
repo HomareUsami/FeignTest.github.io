@@ -20,19 +20,12 @@ var dragOverUserElement; // over時element
 var isDragUserUp = true; // ドラッグ解除時に上側にinsertするかどうか
 
 // user delete
-function deleteUserTable(deleteButtonElement) {
+function deleteUserTable(clickEvent, user) {
     window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
     
     // userName取得
-    var tableRawNode = deleteButtonElement.currentTarget.parentNode.parentNode;
-    var userName = "noUser";
-    var children = tableRawNode.children;
-    for (var i = 0; i < children.length; ++i) {
-        if (children[i].id == userNameTableRawId) {
-            userName = children[i].innerHTML;
-            break;
-        }
-    }
+    var tableRawNode = clickEvent.currentTarget.parentNode.parentNode;
+    var userName = user.name;
     var isDelete = confirm("本当に[" + userName + "]を削除していいですか？");
     if (!isDelete) return; // cancelしてる
 
@@ -64,7 +57,9 @@ function registUserTable(userName, user) {
     var userDeleteElement = userTableRawElement.appendChild(document.createElement("td"));
     var deleteButtonElement = userDeleteElement.appendChild(document.createElement("button"));
     deleteButtonElement.appendChild(document.createTextNode("-"));
-    deleteButtonElement.onclick = deleteUserTable; // click時処理
+    deleteButtonElement.onclick = (clickEvent) => {
+		deleteUserTable(clickEvent, user);
+	}; // click時処理
 
     // color
     createUserColorTableData(userTableRawElement, user);
@@ -72,6 +67,7 @@ function registUserTable(userName, user) {
     // name
     var userNameElement = userTableRawElement.appendChild(document.createElement("td"));
     userNameElement.id = userNameTableRawId;
+	userNameElement.user = user;
     var userNameAra = userNameElement.appendChild(document.createElement("input"));
 	userNameAra.type = "text";
 	userNameAra.placeholder = "user名";
