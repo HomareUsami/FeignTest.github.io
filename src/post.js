@@ -213,7 +213,7 @@ function getPostImageArray(postType) {
 // post image
 function setPostImageData(imageElement,imagePath) {
     if(imagePath != "") {
-        imageElement.style.width = imageElement.style.height = "20px";
+        imageElement.style.width = imageElement.style.height = defaultSize;
     } else {
         imageElement.style.width = imageElement.style.height = "auto";
     }

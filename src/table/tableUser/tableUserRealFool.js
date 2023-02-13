@@ -40,7 +40,7 @@ function createUserRealFoolTableData(userTableRawElement, user) {
 				var isNoSelect = key == noSelect;
 				userRealFoolImage.src = "";
                 userRealFoolImage.src = (isNoSelect ? "" : selectElements[key].src);
-                userRealFoolImage.style.width = userRealFoolImage.style.height = (isNoSelect ? "0px" : "30px");
+                userRealFoolImage.style.width = userRealFoolImage.style.height = (isNoSelect ? "0px" : "50px");
             }
             selectElements[key].selected = isSelect;
             setCommonSelectElementData(selectElements[key]);

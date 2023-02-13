@@ -34,7 +34,7 @@ function createTableHeader(feignTableElement) {
 
 // headerにday追加
 function addRawNowDayElementHeader(tableRawElement) {
-    var dayActionElement = addTableHeader(tableRawElement, day + "日目" + (day == 1 ? "/行動内容" : "")); // action subject
+    var dayActionElement = addTableHeader(tableRawElement, day + "日目"); // action subject
     dayActionElement.colSpan = "2";
     var dayResultElement = addTableHeader(tableRawElement, (day == 1 ? "結果" : "　　")); // result
     dayResultElement.colSpan = "2";

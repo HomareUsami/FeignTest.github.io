@@ -21,7 +21,7 @@ function addUserDayActionElement(userTableRawElement, day, user) {
 
 	// 削除用のテーブル情報
 	var allDeleteElement = userTableRawElement.appendChild(document.createElement("td"));
-	allDeleteElement.style.width = "20px";
+	allDeleteElement.style.width = "30px";
 	var deleteTextElement = allDeleteElement.appendChild(document.createElement("p"));
 	setDeleteTextStyle(deleteTextElement);
 

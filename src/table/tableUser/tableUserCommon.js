@@ -70,8 +70,8 @@ function getUserNameByTableRaw(tableRawElement) {
 }
 
 function setUserInputElement(element, user, isImage) {
-	element.style.width = isImage ? "20px" : "auto";
-	element.style.height = "20px";
+	element.style.width = isImage ? defaultSize : "auto";
+	element.style.height = defaultSize;
 	element.style.display = "inline-block";
 	element.user = user; // user情報を保持
 	element.style.margin = "0px";
@@ -256,7 +256,7 @@ function createSelectUser(parentNode, onClick,selectWindowElement) {
         if(users[i].characterImage != "") {
             // image
             var imgElement = liElement.appendChild(document.createElement("img"));
-            imgElement.style.width = imgElement.style.height = "20px";
+            imgElement.style.width = imgElement.style.height = defaultSize;
             imgElement.src = users[i].characterImage;
 			setOnClick(imgElement, users[i], true);
         } else {
@@ -264,7 +264,7 @@ function createSelectUser(parentNode, onClick,selectWindowElement) {
             var buttonElement = liElement.appendChild(document.createElement("button"));
             buttonElement.innerHTML = users[i].name;
             buttonElement.style.width = "auto";
-			buttonElement.style.height = "20px";
+			buttonElement.style.height = defaultSize;
 			setOnClick(buttonElement, users[i], false);
         }
     }

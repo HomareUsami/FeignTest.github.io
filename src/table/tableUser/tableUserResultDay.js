@@ -22,7 +22,7 @@ function addUserDayResultElement(userTableRawElement, day, user) {
 
 	// 削除用のテーブル情報
 	var allDeleteElement = userTableRawElement.appendChild(document.createElement("td"));
-	allDeleteElement.style.width = "20px";
+	allDeleteElement.style.width = defaultSize;
 
 	var deleteTextElement = allDeleteElement.appendChild(document.createElement("p"));
 	setDeleteTextStyle(deleteTextElement);
@@ -180,10 +180,12 @@ function addUserDayResultElement(userTableRawElement, day, user) {
 		};
 		var setResultImageElement = (element) => {
 			element.draggable = false;
-			element.style.width = element.style.height = "20px";
+			element.style.width = element.style.height = defaultSize;
 			setResultCommonElement(element);
 		};
 		var setResultButtonElement = (element) => {
+			element.style.width = "auto";
+			element.style.height = defaultSize;
 			element.style.webkitAppearance = "none";
 			element.style.mozAppearance = "none";
 			element.style.appearance = "none";
@@ -193,7 +195,7 @@ function addUserDayResultElement(userTableRawElement, day, user) {
 		};
 		var setResultTextElement = (element) => {
 			element.style.width = "auto";
-			element.style.height = "20px";
+			element.style.height = defaultSize;
 			element.style.display = "inline-block";
 			element.style.margin = "0px";
 			setResultCommonElement(element);

@@ -27,7 +27,7 @@ var characterImages = [
 // character関連の画像データの情報設定処理
 function setCharacterImageData(imageElement,imagePath) {
     if(imagePath != "") {
-        imageElement.style.width = imageElement.style.height = "20px";
+        imageElement.style.width = imageElement.style.height = defaultSize;
     } else {
         imageElement.style.width = imageElement.style.height = "auto";
     }

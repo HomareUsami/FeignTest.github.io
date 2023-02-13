@@ -71,8 +71,8 @@ function findChildrenByClassName(className,element) {
 // 削除文字の設定
 function setDeleteTextStyle(element) {
 	element.innerHTML = "×";
-	element.style.width = "20px";
-	element.style.height = "20px";
+	element.style.width = "30px";
+	element.style.height = "30px";
 	element.style.color = "gray";
 	element.style.display = "none";
 	element.style.margin = "0px";

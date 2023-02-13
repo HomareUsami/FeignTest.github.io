@@ -5,6 +5,7 @@ var tableId = "feignTable"; // table id
 var selectWindowClassName = "selectWindow";
 var selectWindowParentClassName = "selectWindowParent";
 
+var defaultSize = "40px";
 
 // selectWindow appendChild
 function appendChildSelectWindow(nowElement) {
