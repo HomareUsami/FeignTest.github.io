@@ -23,11 +23,11 @@ function createUserRealFoolTableData(userTableRawElement, user) {
 
 	// バカの結果を入力するデータ項目の作成
 	var noSelect = "noSelect";
-	var selectElementKeys = [noSelect, none, crew, impostor];
+	var selectElementKeys = [noSelect, none, innocent, impostor];
 	var selectElements = {
 		noSelect: null,
 		none: null,
-		crew: null,
+		innocent: null,
 		impostor: null,
 	};
 	var changeSelectFool = (selectType) => {
@@ -94,7 +94,7 @@ function createUserRealFoolTableData(userTableRawElement, user) {
 		};
 	};
 	createFoolImage(none);
-	createFoolImage(crew);
+	createFoolImage(innocent);
 	createFoolImage(impostor);
 
 	// 最初は未選択を選択中

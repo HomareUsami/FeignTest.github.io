@@ -150,7 +150,7 @@ function createSelectPostTypeButtons(parentNode, onClickImage,isEnableNoSelect) 
     var userPostSelectButtonUlElement = parentNode.appendChild(document.createElement("ul"));
     
     // クルー
-    createButton(crew, "rgb(75, 221, 61)");
+    createButton(innocent, "rgb(75, 221, 61)");
 
     // インポスター
     createButton(impostor, "rgb(212, 28, 28)");
@@ -186,7 +186,7 @@ function changePostTypeSelectPost(postType, parentNode, onClickImage,isEnableNoS
 				continue;
 			}
 	
-			// crew,impostor,neutralなど変更があったら行を変更する
+			// innocent,impostor,neutralなど変更があったら行を変更する
 			if (prevPostType != postImageData.postType) {
 				prevPostType = postImageData.postType;
 				userSelectPostListUlElement = userSelectPostListDivElement.appendChild(document.createElement("ul"));

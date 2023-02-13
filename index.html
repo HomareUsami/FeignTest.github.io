@@ -11,9 +11,6 @@
 	<div id="window">
 		<!--javascript読み込み-->
 		<script src="src/main.js" charset="utf-8"></script>
-		<!--スラバカメイン画像-->
-		<img src="image/test/test.png" style="width: 600px; height: auto;">
-		<br>
 		<!--各種ボタン-->
 		<button onclick="callAddDay()">翌日</button>
 		<button onclick="callReset()">reset</button>
@@ -43,13 +40,48 @@
 		<textarea id="UserRegistArray" name="UserRegistArray" placeholder="一括User入力欄改行すれば2人目、3人目とまとめて登録できます。"
 			size="30"></textarea>
 		<button onclick="callUserRegistArray()">一括User登録</button>
-		
+
 		<!--余裕があればtreenode型に変更したい-->
 		<h2 style="margin: 0px;">説明</h2>
+		<p style="margin: 0px;">FEIGNのメモ専用サイトとなっております</p>
+		<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #333333;">
+			<p><b>【色】</b>プレイヤーカラーを選択することができます</p>
 
-		<p style="margin: 0px;"></p>
+			<p style="margin-bottom: 0px;"><b>【名前】</b>プレイヤー名を入力することが出来ます</p>
+			<p style="margin: 0px;">　　　　一括user登録で一括で入力することも可能です</p>
+			<p style="margin: 0px;">　　　　例）</p>
+			<p style="margin: 0px;">　　　　1人目</p>
+			<p style="margin: 0px;">　　　　2人目</p>
+			<p style="margin: 0px;">　　　　3人目</p>
+			<p style="margin: 0px;"><b style="color: red;">※同一の名前を複数登録はできません</b></p>
 
-		<h2 style="margin: 0px;">ライセンスについて</h2>
+			<p style="margin-bottom: 0px;"><b>【CO役職】</b>プレイヤーがCOする役職を選択することができます</p>
+			<p style="margin: 0px;">未選択をクリックすることで入力をリセットすることが出来ます</p>
+
+			<p style="margin-bottom: 0px;"><b>【確定役職】</b>スライドや吊られたり死んだりした人の役職を入力することが出来ます</p>
+			<p style="margin: 0px;">未選択をクリックすることで入力をリセットすることが出来ます</p>
+			<p><b>【1日目】</b>役職行動を行ったプレイヤーのカラーを選択することが出来ます</p>
+			<p><b>【結果】</b>役職行動からその結果を入力することが出来ます</p>
+			<p><b>【翌日】</b>クリックすると1日プラスされます</p>
+			<p><b>【reset】</b>入力したものの全てがリセットされます</p>
+			<p><b>【日数リセット】</b>1日以降の日にちがリセットされます</p>
+
+			<p>行をクリック長押しで任意の行と入れ替えることが出来ます（スマホは対応しておりません）</p>
+		</div>
+
+		<h2 style="margin-bottom: 0px;">※動作環境について</h2>
+		<p style="margin: 0px;">safari・opera・chromeは対応することを確認しております（一部機能を除いて）</p>
+
+		<h2 style="margin-bottom: 0px;">連絡先</h2>
+		<div style="display: inline-block;">
+			<p style="margin: 0px;">バグ報告や要望などはProgrammerに、feign一緒に遊びたいよーてきなものはSupporterにお願いします。</p>
+			<br>
+			<a href="https://twitter.com/usami_homare"><img src="image/contact/programmer.png"
+					style="display: inline-block; width: auto;height: 100px;"></a>
+			<a href="https://twitter.com/x_H_N_R_x"><img src="image/contact/supporter.png"
+					style="display: inline-block; width: auto;height: 100px;"></a>
+		</div>
+		<h2 style="margin-bottom: 0px;">ライセンスについて</h2>
 		<div style="display: inline-block;">
 			<a href="https://github.com/HomareUsami/FeignTest.github.io" style="display: inline-block;">github</a>
 			<p style="display: inline-block;margin: 0px;">を確認ください</p>

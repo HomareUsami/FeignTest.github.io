@@ -239,6 +239,7 @@ function addUserDayResultElement(userTableRawElement, day, user) {
 		// そのほか
 		var etcUlElement = element.appendChild(document.createElement("ul"));
 		createResultLiElement(etcUlElement, "btn", "補導");
+		createResultLiElement(etcUlElement, "btn", "罠");
 		createResultLiElement(etcUlElement, "btn", "在宅");
 		createResultLiElement(etcUlElement, "btn", "黙秘");
 		createResultLiElement(etcUlElement, "btn", "来客");

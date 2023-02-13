@@ -6,6 +6,7 @@ var tableHeaderId = "tableHeader";  // table Header id
 function addTableHeader(tableRawElement, txt) {
     var tableHeaderElement = tableRawElement.appendChild(document.createElement("th"));
     tableHeaderElement.appendChild(document.createTextNode(txt));
+	tableHeaderElement.style.whiteSpace = "nowrap";
     return tableHeaderElement;
 }
 

@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // 役職タイプ
 var none = "none";
-var crew = "crew";
+var innocent = "innocent";
 var impostor = "impostor";
 var neutral = "neutral";
 var other = "other";
@@ -63,119 +63,119 @@ var hatenaImages = {
 var mousePostImages = {
     none: createPostData(mouse, "nezumi1", none),
     impostor: createPostData(mouse, "nezumi2", impostor),
-    crew: createPostData(mouse, "nezumi3", crew),
+    innocent: createPostData(mouse, "nezumi3", innocent),
     neutral: null
 };
 // インベスティゲーター
 var investigatorPostImages = {
     none: createPostData(investigator, "in1", none),
     impostor: createPostData(investigator, "in2", impostor),
-    crew: createPostData(investigator, "in3", crew),
+    innocent: createPostData(investigator, "in3", innocent),
     neutral: null
 };
 // ポリス
 var policePostImages = {
     none: createPostData(police, "pori1", none),
     impostor: createPostData(police, "pori2", impostor),
-    crew: createPostData(police, "pori3", crew),
+    innocent: createPostData(police, "pori3", innocent),
     neutral: null
 };
 // トラッパー
 var trapperPostImages = {
     none: createPostData(trapper, "tora1", none),
     impostor: createPostData(trapper, "tora2", impostor),
-    crew: createPostData(trapper, "tora3", crew),
+    innocent: createPostData(trapper, "tora3", innocent),
     neutral: null
 };
 // ルックアウト
 var lookoutPostImages = {
     none: createPostData(lookout, "me1", none),
     impostor: createPostData(lookout, "me2", impostor),
-    crew: createPostData(lookout, "me3", crew),
+    innocent: createPostData(lookout, "me3", innocent),
     neutral: null
 };
 // 挑発者
 var provocateurPostImages = {
     none: createPostData(provocateur, "ti1", none),
     impostor: createPostData(provocateur, "ti2", impostor),
-    crew: createPostData(provocateur, "ti3", crew),
+    innocent: createPostData(provocateur, "ti3", innocent),
     neutral: null
 };
 // ストーカー
 var stalkerPostImages = {
     none: createPostData(stalker, "suto1", none),
     impostor: createPostData(stalker, "suto2", impostor),
-    crew: createPostData(stalker, "suto3", crew),
+    innocent: createPostData(stalker, "suto3", innocent),
     neutral: null
 };
 // ドクター
 var doctorPostImages = {
     none: createPostData(doctor, "do1", none),
     impostor: null,
-    crew: createPostData(doctor, "do2", crew),
+    innocent: createPostData(doctor, "do2", innocent),
     neutral: null
 };
 // クリーナー
 var cleanerPostImages = {
     none: createPostData(cleaner, "aka1", impostor),
     impostor: createPostData(cleaner, "aka1", impostor),
-    crew: null,
+    innocent: null,
     neutral: null
 };
 // ブレイマー
 var braemarPostImages = {
     none: createPostData(braemar, "aka2", impostor),
     impostor: createPostData(braemar, "aka2", impostor),
-    crew: null,
+    innocent: null,
     neutral: null
 };
 // シリアルキラー
 var serialKillerPostImages = {
     none: createPostData(serialKiller, "ao4", neutral),
     impostor: null,
-    crew: null,
+    innocent: null,
     neutral: createPostData(serialKiller, "ao4", neutral)
 };
 // ボマー
 var bomberPostImages = {
     none: createPostData(bomber, "ao5", neutral),
     impostor: null,
-    crew: null,
+    innocent: null,
     neutral: createPostData(bomber, "ao5", neutral)
 };
 // シーフ
 var thiefPostImages = {
     none: createPostData(thief, "ao6", neutral),
     impostor: null,
-    crew: null,
+    innocent: null,
     neutral: createPostData(thief, "ao6", neutral)
 };
 // サバイバー
 var survivorPostImages = {
     none: createPostData(survivor, "ao3", neutral),
     impostor: null,
-    crew: null,
+    innocent: null,
     neutral: createPostData(survivor, "ao3", neutral)
 };
 // 魔術師
 var magicianPostImages = {
     none: createPostData(magician, "ao2", neutral),
     impostor: null,
-    crew: null,
+    innocent: null,
     neutral: createPostData(magician, "ao2", neutral)
 };
 // ゴースト
 var ghostPostImages = {
     none: createPostData(ghost, "ao1", neutral),
     impostor: null,
-    crew: null,
+    innocent: null,
     neutral: createPostData(ghost, "ao1", neutral)
 };
 // バカ
 var foolPostImages = {
     none: createPostData(fool, "baka1", none),
     impostor: createPostData(fool, "baka2", impostor),
-    crew: createPostData(fool, "baka3", crew),
+    innocent: createPostData(fool, "baka3", innocent),
     neutral: null
 };
 
@@ -199,8 +199,8 @@ var postImageArrayByPostType = {
         , serialKillerPostImages[none], bomberPostImages[none], thiefPostImages[none], survivorPostImages[none], magicianPostImages[none] , ghostPostImages[none]
         , cleanerPostImages[none], braemarPostImages[none]
         , hatenaImages["Green"], hatenaImages["Red"], hatenaImages["Yellow"], hatenaImages["Blue"]],
-    crew: [mousePostImages[crew], investigatorPostImages[crew], policePostImages[crew], trapperPostImages[crew], lookoutPostImages[crew]
-        , provocateurPostImages[crew], stalkerPostImages[crew], doctorPostImages[crew], foolPostImages[crew]
+    innocent: [mousePostImages[innocent], investigatorPostImages[innocent], policePostImages[innocent], trapperPostImages[innocent], lookoutPostImages[innocent]
+        , provocateurPostImages[innocent], stalkerPostImages[innocent], doctorPostImages[innocent], foolPostImages[innocent]
         , hatenaImages["Green"], hatenaImages["Red"], hatenaImages["Yellow"], hatenaImages["Blue"]],
     impostor: [mousePostImages[impostor], investigatorPostImages[impostor], policePostImages[impostor], trapperPostImages[impostor], lookoutPostImages[impostor]
         , provocateurPostImages[impostor], stalkerPostImages[impostor], cleanerPostImages[impostor], braemarPostImages[impostor], foolPostImages[impostor]

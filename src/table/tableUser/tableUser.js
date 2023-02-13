@@ -49,7 +49,7 @@ function registUserTable(userName, user) {
     var userTableRawElement = feignTableElement.appendChild(document.createElement("tr"));
     user.tableRawElement = userTableRawElement; // userとしてtableElemを覚えておく。
 	userTableRawElement.user = user;
-
+	feignTableElement.style.whiteSpace = "nowrap";
     // drag
     registDragFunctionUserTableRaw(userTableRawElement);
 
