@@ -108,19 +108,19 @@ function updateUserInputElement(userInputElement, user) {
 ///////////////////////////////////////////////////////////////////////////
 
 // 役職選択の情報群を作成
-function createSelectPost(parentNode, onClickImage) {
+function createSelectPost(parentNode, onClickImage, isEnableNoSelect) {
     // button create
-    createSelectPostTypeButtons(parentNode, onClickImage);
+    createSelectPostTypeButtons(parentNode, onClickImage,isEnableNoSelect);
 
     // 役職設定list elementを追加
     var userPostSelectPostListElement = parentNode.appendChild(document.createElement("div"));
     userPostSelectPostListElement.id = userSelectPostListId;
 
 	// defaultはnone
-	changePostTypeSelectPost(none, parentNode, onClickImage);
+	changePostTypeSelectPost(none, parentNode, onClickImage,isEnableNoSelect);
 }
 // 役職のタイプボタンを作成
-function createSelectPostTypeButtons(parentNode, onClickImage) {
+function createSelectPostTypeButtons(parentNode, onClickImage,isEnableNoSelect) {
     // 共通button style setting
     var setButtonStyle = (buttonElement) => {
         buttonElement.style.webkitAppearance = "none";
@@ -142,7 +142,7 @@ function createSelectPostTypeButtons(parentNode, onClickImage) {
         postTypeButtonElement.onclick = (clickEvent) => {
             window.event.stopPropagation(); // 親のclickイベントに伝播しないように。　これにより、td側のonclickは呼ばれなくなる。
             // click時event
-            changePostTypeSelectPost(postType, parentNode, onClickImage);
+            changePostTypeSelectPost(postType, parentNode, onClickImage,isEnableNoSelect);
         };
     };
 
@@ -163,7 +163,7 @@ function createSelectPostTypeButtons(parentNode, onClickImage) {
 }
 
 // 役職タイプ変更時処理
-function changePostTypeSelectPost(postType, parentNode, onClickImage) {
+function changePostTypeSelectPost(postType, parentNode, onClickImage,isEnableNoSelect) {
     console.log("change select postType : " + postType);
 
     // 役職タイプが変わったのでimage listを変更。
@@ -174,21 +174,30 @@ function changePostTypeSelectPost(postType, parentNode, onClickImage) {
     var userSelectPostListUlElement = null;
     var postImageArray = getPostImageArray(postType);
     var prevPostType = null;
-    for (var i = 0; i < postImageArray.length; ++i) {
-        var postImageData = postImageArray[i];
 
-        // nullは無効
-        if (postImageData == null) continue;
-
-        // crew,impostor,neutralなど変更があったら行を変更する
-        if (prevPostType != postImageData.postType) {
-            prevPostType = postImageData.postType;
-            userSelectPostListUlElement = userSelectPostListDivElement.appendChild(document.createElement("ul"));
-        }
-
-        // 役職の画像を作成
-        createSelectPostImageData(userSelectPostListUlElement, postImageData, onClickImage);
-    }
+	var createSelectPostImageDataArray = (postImageArray) => {
+		for (var i = 0; i < postImageArray.length; ++i) {
+			var postImageData = postImageArray[i];
+	
+			// nullは無効
+			if (postImageData == null) continue;
+	
+			if (postImageData.post == noSelect && !isEnableNoSelect) {
+				continue;
+			}
+	
+			// crew,impostor,neutralなど変更があったら行を変更する
+			if (prevPostType != postImageData.postType) {
+				prevPostType = postImageData.postType;
+				userSelectPostListUlElement = userSelectPostListDivElement.appendChild(document.createElement("ul"));
+			}
+	
+			// 役職の画像を作成
+			createSelectPostImageData(userSelectPostListUlElement, postImageData, onClickImage);
+		}
+	};
+	createSelectPostImageDataArray(postImageArray);
+	createSelectPostImageDataArray(getOtherPostImageArray());
 }
 
 // 役職の画像データを作成

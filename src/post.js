@@ -8,6 +8,7 @@ var none = "none";
 var crew = "crew";
 var impostor = "impostor";
 var neutral = "neutral";
+var other = "other";
 
 // 役職名
 var mouse = "mouse";
@@ -178,6 +179,14 @@ var foolPostImages = {
     neutral: null
 };
 
+// 未選択
+var noSelect = "noSelect";
+var noSelectImage = createPostData(noSelect, noSelect, other);
+
+// 真主張
+var realClaim = "realClaim";
+var realClaimImage = createPostData(realClaim, realClaim, other);
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // 役職のタイプ別情報
@@ -198,7 +207,8 @@ var postImageArrayByPostType = {
         , hatenaImages["Green"],hatenaImages["Red"],hatenaImages["Yellow"],hatenaImages["Blue"]],
     neutral: [serialKillerPostImages[neutral], bomberPostImages[neutral], thiefPostImages[neutral], survivorPostImages[neutral], magicianPostImages[neutral]
         , ghostPostImages[neutral]
-        , hatenaImages["Green"], hatenaImages["Red"], hatenaImages["Yellow"], hatenaImages["Blue"]]
+        , hatenaImages["Green"], hatenaImages["Red"], hatenaImages["Yellow"], hatenaImages["Blue"]],
+	other: [realClaimImage, noSelectImage]
 };
 
 ///////////////////////////////////////////////////////////////////////////
@@ -210,11 +220,15 @@ var postImageArrayByPostType = {
 function getPostImageArray(postType) {
     return postImageArrayByPostType[postType];
 }
+function getOtherPostImageArray() {
+	return postImageArrayByPostType[other];
+}
 // post image
 function setPostImageData(imageElement,imagePath) {
     if(imagePath != "") {
         imageElement.style.width = imageElement.style.height = defaultSize;
     } else {
-        imageElement.style.width = imageElement.style.height = "auto";
+        imageElement.style.width = "0px";
+		imageElement.style.height = defaultSize;
     }
 }

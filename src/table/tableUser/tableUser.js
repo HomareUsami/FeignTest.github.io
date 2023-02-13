@@ -126,9 +126,10 @@ function registUserTable(userName, user) {
 	
     // post
     createUserPostTableData(userTableRawElement, user);
+    createUserRealPostTableData(userTableRawElement, user);
 
     // real fool
-    createUserRealFoolTableData(userTableRawElement, user);
+    //createUserRealFoolTableData(userTableRawElement, user);
 
     // day
     for (var i = 0; i < day; ++i) {

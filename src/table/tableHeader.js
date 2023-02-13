@@ -25,8 +25,8 @@ function createTableHeader(feignTableElement) {
     addTableHeader(tableHeaderRawElement, "削除"); // color
     addTableHeader(tableHeaderRawElement, "色"); // color
     addTableHeader(tableHeaderRawElement, "名前"); // name
-    addTableHeader(tableHeaderRawElement, "役職"); // post
-    addTableHeader(tableHeaderRawElement, "真バカ"); // real fool
+    addTableHeader(tableHeaderRawElement, "CO役職"); // post
+    addTableHeader(tableHeaderRawElement, "確定役職"); // real post
 
     // 1日目登録
     addRawNowDayElementHeader(tableHeaderRawElement);

@@ -5,6 +5,9 @@ document.write("<script src=\"src/table/tableUserCommon.js\" charset=\"utf-8\"><
 var userPostTableRawId = "userPost";
 var userPostImageId = "userPostImage";
 
+var userRealPostTableRawId = "userRealPost";
+var userRealPostImageId = "userRealPostImage";
+
 // userPost設定テーブルデータの作成
 function createUserPostTableData(userTableRawElement, user) {
 
@@ -26,6 +29,7 @@ function createUserPostTableData(userTableRawElement, user) {
     // image click処理
     var onImageClick = (clickEvent, postImageData) => {
         var postImage = clickEvent.currentTarget.src;
+		if(postImageData.post == noSelect) postImage = "";
         userPostImageElement.src = postImage;
         setPostImageData(userPostImageElement, postImage);
 
@@ -39,5 +43,39 @@ function createUserPostTableData(userTableRawElement, user) {
     var userPostSelectElement = appendChildSelectWindow(userPostElement);
 
     // 役職用のselectWindow以下に役職設定欄を作成
-    createSelectPost(userPostSelectElement, onImageClick);
+	createSelectPost(userPostSelectElement, onImageClick, true);
+}
+
+// 確定役職欄
+function createUserRealPostTableData(userTableRawElement, user) {
+
+    // 役職項目の入力欄を実装
+    var userRealPostElement = userTableRawElement.appendChild(document.createElement("td"));
+    userRealPostElement.id = userRealPostTableRawId;
+    userRealPostElement.onclick = (clickEvent) => {
+        window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
+        openSelectWindow(userRealPostSelectElement);
+    };
+
+    // 役職のimage設定項目を設定
+    var userRealPostImageElement = userRealPostElement.appendChild(document.createElement("img"));
+    userRealPostImageElement.id = userRealPostImageId;
+    userRealPostImageElement.src = "";
+    userRealPostImageElement.draggable = false;
+    setPostImageData(userRealPostImageElement, "");
+
+    // image click処理
+    var onImageClick = (clickEvent, postImageData) => {
+        var postImage = clickEvent.currentTarget.src;
+		if(postImageData.post == noSelect) postImage = "";
+        userRealPostImageElement.src = postImage;
+        setPostImageData(userRealPostImageElement, postImage);
+        closeSelectWindow(userRealPostSelectElement);
+    };
+
+    // 役職用のselectWindowを作成
+    var userRealPostSelectElement = appendChildSelectWindow(userRealPostElement);
+
+    // 役職用のselectWindow以下に役職設定欄を作成
+	createSelectPost(userRealPostSelectElement, onImageClick, true);
 }

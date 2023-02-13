@@ -323,7 +323,7 @@ function addUserDayResultElement(userTableRawElement, day, user) {
 			};
 			onSelectedItemElements.push(data);
 		};
-		createSelectPost(element, onImageClick);
+		createSelectPost(element, onImageClick, false);
 	};
 
 	// 選択項目の登録
