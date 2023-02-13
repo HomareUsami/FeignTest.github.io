@@ -54,6 +54,7 @@ jQueryも使ってみたかったんだけどそこまで余裕がなく。<br>
 
 ## 連絡先
 [プログラマーTwitter](https://twitter.com/usami_homare)
+
 [知人Twitter](https://twitter.com/x_H_N_R_x)
 
 ## 現状発覚してるバグについて
