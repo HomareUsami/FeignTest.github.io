@@ -8,4 +8,15 @@
 jQueryも使ってみたかったんだけどそこまで余裕がなく。
 まずはjavascriptとhtml,cssの理解がしたくて基本それだけでの実装で行いました。
 
+スマホには未対応です...。
+操作保証対象外です。
+
+## 対応ブラウザについて
+自分の手元でのIE,Opera,Chromeの動作は確認済みです。
+
 ## 使い方
+
+
+## 連絡先
+[プログラマーTwitter](https://twitter.com/usami_homare)
+[知人Twitter](https://twitter.com/x_H_N_R_x)

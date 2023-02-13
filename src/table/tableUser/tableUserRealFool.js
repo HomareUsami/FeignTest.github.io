@@ -37,8 +37,10 @@ function createUserRealFoolTableData(userTableRawElement, user) {
             if (selectType == key) {
                 isSelect = true;
                 // selectしたのでimageを設定
-                userRealFoolImage.src = key == noSelect ? "" : selectElements[key].src;
-                userRealFoolImage.style.width = userRealFoolImage.style.height = key == noSelect ? "auto" : "30px";
+				var isNoSelect = key == noSelect;
+				userRealFoolImage.src = "";
+                userRealFoolImage.src = (isNoSelect ? "" : selectElements[key].src);
+                userRealFoolImage.style.width = userRealFoolImage.style.height = (isNoSelect ? "0px" : "30px");
             }
             selectElements[key].selected = isSelect;
             setCommonSelectElementData(selectElements[key]);
