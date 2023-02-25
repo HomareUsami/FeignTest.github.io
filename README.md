@@ -57,6 +57,8 @@ jQueryも使ってみたかったんだけどそこまで余裕がなく。<br>
 
 [知人Twitter](https://twitter.com/x_H_N_R_x)
 
+[アイコン画像提供Twitter](https://twitter.com/kagemaru0205)
+
 ## 現状発覚してるバグについて
 - OperaGXの特定環境だとUserの並べ替えをすると罫線が太くなる。
   - 自分の手元で再現できず
