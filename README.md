@@ -14,6 +14,11 @@ jQueryも使ってみたかったんだけどそこまで余裕がなく。<br>
 ## 対応ブラウザについて
 自分の手元でのOpera,Chromeの動作は確認済みです。
 
+## startFeignについて
+startFeign.exeを起動すると、steam経由でfeignを起動し、feignメモを規定のブラウザで起動します。
+startFeign.batが隠しファイルにしているのですが、このbatと同様のフォルダ内に配置しておく必要があります。
+exeのみを別の場所に配置したい場合は、exeをショートカットにして使用してください。
+
 ## 使い方
 ※updateが入っていて画像が異なる場合があります。<br>
 <img src="image/operation/main.png" width="500px">
