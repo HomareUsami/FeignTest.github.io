@@ -276,5 +276,38 @@ function createSelectUser(parentNode, onClick,selectWindowElement) {
 			buttonElement.style.height = defaultSize;
 			setOnClick(buttonElement, users[i], false);
         }
+		
     }
+}
+
+// table reset
+var resetUserBackgroundColor = "rgba(255,255,255,0.8)";
+function setUserBackgroundColorTable(user) {
+	user.tableRawElement.style.backgroundColor = resetUserBackgroundColor;
+	user.tableRawElement.style.backgroundImage = "";
+	if (user.backgroundColor == "" && user.backgroundColor2 == "") {
+		user.tableRawElement.style.backgroundColor = resetUserBackgroundColor;
+	} else if(user.backgroundColor2 == "") {
+		user.tableRawElement.style.backgroundColor = user.backgroundColor;
+	} else {
+		user.tableRawElement.style.backgroundColor = "";
+
+		// 背景色の回転値を設定
+		var backGroundDeg = 0;
+
+		var tableRawElementRect = user.tableRawElement.getBoundingClientRect();
+		var x = tableRawElementRect.width;
+		var y = tableRawElementRect.height;
+		console.log(x + "," + y);
+		var rad = Math.atan2(y, x);
+		backGroundDeg = rad * (180 / Math.PI);
+
+		var backgroundData = "linear-gradient(" + backGroundDeg.toString() + "deg," + user.backgroundColor + " 0%," + user.backgroundColor + " 50%," + user.backgroundColor2 + " 50%," + user.backgroundColor2 + " 100%)";
+		//var backgroundData = "linear-gradient(" + backGroundDeg.toFixed(1) + "deg," + user.backgroundColor + " 0%," + user.backgroundColor + " 50%," + user.backgroundColor2 + " 50%," + user.backgroundColor2 + " 100%)";
+		//backgroundData = "linear-gradient(" + backGroundDeg.toFixed(1) + "deg," + "rgb(0,0,0)" + " 0%," + "rgb(0,0,0)" + " 50%," + "rgb(255,255,255)" + " 50%," + "rgb(255,255,255)" + " 100%)";
+		//backgroundData = "linear-gradient(" + "45" + "deg," + "rgb(0,0,0)" + " 0%," + "rgb(0,0,0)" + " 50%," + "rgb(255,255,255)" + " 50%," + "rgb(255,255,255)" + " 100%)";
+		//backgroundData = "linear-gradient(#e66465, #9198e5)";
+		console.log(backgroundData);
+		user.tableRawElement.style.backgroundImage = backgroundData;
+	}
 }

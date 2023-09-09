@@ -5,6 +5,10 @@ document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
 // window load event listner regist
 window.addEventListener("load", onLoadedWindow);
 
+var mainVersion = "1.000";
+var subVersion = "0.001";
+var localVersion = "0.000";
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // Window
@@ -14,6 +18,8 @@ window.addEventListener("load", onLoadedWindow);
 function onLoadedWindow() {
     console.log("window loaded");
     resetAll();
+    var versionInfo = document.getElementById("version_info");
+	versionInfo.innerHTML = "ver." + mainVersion + "_" + subVersion + "_" + localVersion;
     var windowElement = document.getElementById("window");
     windowElement.onclick = (event) => {
         window.event.stopPropagation(); // 親のclickイベントに伝播しないように。

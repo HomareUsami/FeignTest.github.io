@@ -39,6 +39,133 @@ function deleteUserTable(clickEvent, user) {
 	
 }
 
+// user table backgroundColor set add 2023/09/09 update
+function setUserBackgroundColor(user, color) {
+	if(user.backgroundColor == "" || (user.backgroundColor != "" && user.backgroundColor2 != "")) {
+		user.backgroundColor = color;
+		user.backgroundColor2 = "";
+		setUserBackgroundColorTable(user);
+	} else if (user.backgroundColor != "" && user.backgroundColor2 != "") {
+		user.backgroundColor = color;
+		user.backgroundColor2 = "";
+		setUserBackgroundColorTable(user);
+	} else {
+		user.backgroundColor2 = color;
+		setUserBackgroundColorTable(user);
+	}
+}
+
+// user background color set button create add 2023/09/09 update
+function createUserBackgroundColorButton(parentNode, user,onClick) {
+
+	var buttonSetSyncUserDataDisplay = (user, buttonElement, color, buttonName) => {
+		buttonElement.innerHTML = buttonName;
+		if (buttonName == resetButtonName) {
+			if (user.backgroundColor == "") {
+				buttonElement.parentNode.style.display = "none";
+				buttonElement.style.display = "none";
+			} else {
+				buttonElement.parentNode.style.display = "";
+				buttonElement.style.display = "block";
+			}
+		} else if (user.backgroundColor == color || user.backgroundColor2 == color ) {
+			//buttonElement.parentNode.style.display = "none";
+			//buttonElement.style.display = "none";
+			buttonElement.parentNode.style.display = "";
+			buttonElement.style.display = "block";
+			buttonElement.style.width = "80px";
+			buttonElement.innerHTML = buttonName + "(selected)";
+		} else {
+			buttonElement.parentNode.style.display = "";
+			buttonElement.style.display = "block";
+			buttonElement.style.width = "40px";
+		}
+	};
+
+	var createUserBackgroundColorOneButton = (parentNode, user, color, buttonName, onClick, onClick2, resetFunc, resetColor) => {
+		var liElement = parentNode.appendChild(document.createElement("li"));
+		//liElement.style.padding = "0px";
+		//liElement.style.border = "0px";
+		var buttonElement = liElement.appendChild(document.createElement("button"));
+		buttonElement.innerHTML = buttonName;
+		//buttonElement.style.padding = "10px";
+		//buttonElement.style.border = "2px";
+		var widthSize = 40;
+		var heightSize = 20;
+		if(buttonName == resetButtonName) {
+			widthSize = 80;
+		}
+		buttonElement.style.width = widthSize.toString() + "px";
+		buttonElement.style.height = heightSize + "px";
+		buttonElement.style.backgroundColor = color;
+		buttonSetSyncUserDataDisplay(user, buttonElement, color, buttonName);
+		buttonElement.onclick = (clickEvent) => {
+            window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
+			if(buttonName == resetButtonName) {
+				resetFunc(user, resetColor);
+			} else {
+				setUserBackgroundColor(user, color);
+			}
+			onClick();
+			onClick2();
+		};
+		return buttonElement;
+	};
+
+	// button全体のul作成
+	var ulElement = parentNode.appendChild(document.createElement("ul"));
+	ulElement.style.padding = "2px";
+	ulElement.style.border = "0px";
+
+	// 便利なカラーコード rgba変換ツールサイト https://arts-factory.net/rgbatool/
+
+	// ボタンを押した際に色を設定した上で今と同じ色の場合は非表示にする。
+	var onClickedButton = () => {
+		buttonSetSyncUserDataDisplay(user, whiteButton, whiteButtonColor, whiteButtonName);
+		buttonSetSyncUserDataDisplay(user, greenButton, greenButtonColor, greenButtonName);
+		buttonSetSyncUserDataDisplay(user, yellowButton, yellowButtonColor, yellowButtonName);
+		buttonSetSyncUserDataDisplay(user, redButton, redButtonColor, redButtonName);
+		buttonSetSyncUserDataDisplay(user, blueButton, blueButtonColor, blueButtonName);
+		buttonSetSyncUserDataDisplay(user, grayButton, grayButtonColor, grayButtonName);
+		buttonSetSyncUserDataDisplay(user, resetButton, resetButtonColor, resetButtonName);
+	};
+
+	var resetFunc = (user) => {
+		user.backgroundColor = "";
+		user.backgroundColor2 = "";
+		setUserBackgroundColorTable(user);
+	};
+
+	// ulからボタン単品情報を作成
+	var whiteButtonColor = resetUserBackgroundColor;
+	var whiteButtonName = "";
+	var whiteButton = createUserBackgroundColorOneButton(ulElement, user, whiteButtonColor, whiteButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // デフォルト 白
+	var greenButtonColor = "rgba(152,251,152,0.8)";
+	var greenButtonName = "";
+	var greenButton = createUserBackgroundColorOneButton(ulElement, user, greenButtonColor, greenButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // 緑
+	var yellowButtonColor = "rgba(255,250,205,0.8)";
+	var yellowButtonName = "";
+	var yellowButton = createUserBackgroundColorOneButton(ulElement, user, yellowButtonColor, yellowButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // 黄色
+	var redButtonColor = "rgba(250,128,114,0.55)";
+	var redButtonName = "";
+	var redButton = createUserBackgroundColorOneButton(ulElement, user, redButtonColor, redButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // 赤
+	var blueButtonColor = "rgba(135,206,235,0.8)";
+	var blueButtonName = "";
+	var blueButton = createUserBackgroundColorOneButton(ulElement, user, blueButtonColor, blueButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // 青
+	var grayButtonColor = "rgba(211,211,211,0.8)";
+	var grayButtonName = "";
+	var grayButton = createUserBackgroundColorOneButton(ulElement, user, grayButtonColor, grayButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // 灰色
+
+	// resetButton
+	var resetButtonColor = whiteButton;
+	var resetButtonName = "resetButton";
+	var resetButton = createUserBackgroundColorOneButton(ulElement, user, resetButtonColor, resetButtonName, onClick, onClickedButton, resetFunc, whiteButtonColor); // reset
+	
+	// 最初は白設定
+	setUserBackgroundColorTable(user);
+	// 以下だと日数resetするたびに初期化される
+	//resetFunc(user);
+}
 
 // user table登録
 function registUserTable(userName, user) {
@@ -50,6 +177,7 @@ function registUserTable(userName, user) {
     user.tableRawElement = userTableRawElement; // userとしてtableElemを覚えておく。
 	userTableRawElement.user = user;
 	feignTableElement.style.whiteSpace = "nowrap";
+
     // drag
     registDragFunctionUserTableRaw(userTableRawElement);
 
@@ -72,22 +200,33 @@ function registUserTable(userName, user) {
 	userNameDataElement.user = user;
 	userNameDataElement.innerHTML = userName;
 	userNameDataElement.style.display = "block";
+	userNameDataElement.style.margin = "0px";
+	userNameDataElement.style.border = "0px";
+	userNameDataElement.style.padding = "0px";
 	userNameDataElement.onclick = (clickEvent) => {
 		window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
 		userNameDataElement.style.display = "none";
-		userNameAra.style.display = "block";
-		userNameAra.focus(); // 強制的にフォーカスする
+		userNameArea.style.display = "block";
+		userNameArea.focus(); // 強制的にフォーカスする
+
+		// user background color select window open
+		if(userBackgroundColorSelectWindow.style.display != "block") {
+			openSelectWindow(userBackgroundColorSelectWindow);
+		}
 	};
 
-    var userNameAra = userNameElement.appendChild(document.createElement("input"));
-	userNameAra.type = "text";
-	userNameAra.placeholder = "user名";
-	userNameAra.user = user;
-	userNameAra.value = userName;
-	userNameAra.style.display = "none"; // 最初非表示
+    var userNameArea = userNameElement.appendChild(document.createElement("input"));
+	userNameArea.type = "text";
+	userNameArea.placeholder = "user名";
+	userNameArea.user = user;
+	userNameArea.value = userName;
+	userNameArea.style.display = "none"; // 最初非表示
+	userNameArea.style.margin = "0px";
+	userNameArea.style.border = "0px";
+	userNameArea.style.padding = "0px";
 
 	// 途中でも名前を変更できるように
-	userNameAra.onchange = (changeEvent) => {
+	userNameArea.onchange = (changeEvent) => {
 		var changeName = changeEvent.currentTarget.value;
 
 		// user名がかぶってないかチェック。
@@ -116,14 +255,31 @@ function registUserTable(userName, user) {
 		}
 
 		userNameDataElement.style.display = "block";
-		userNameAra.style.display = "none";
+		userNameArea.style.display = "none";
+		closeSelectWindow(userBackgroundColorSelectWindow);
+	};
+	userNameArea.onclick = (clickEvent) => {
+		window.event.stopPropagation(); // 親のclickイベントに伝播しないように。 選択ウィンドウが閉じるように実装
 	};
 	// フォーカスが外れた時処理
-	userNameAra.onblur = (blurEvent) => {
+	userNameArea.onblur = (blurEvent) => {
 		userNameDataElement.style.display = "block";
-		userNameAra.style.display = "none";
+		userNameArea.style.display = "none";
+		// selectWindowを閉じるとボタンを押しても、反応しないため
+		//closeSelectWindow(userBackgroundColorSelectWindow);
 	};
 	
+	// add user backgroundColor 2023/09/09
+	var userBackgroundColorSelectWindow = appendChildSelectWindow(userNameElement);
+	var onClickBackgroundColorButton = () => {
+		userNameDataElement.style.display = "block";
+		userNameArea.style.display = "none";
+		closeSelectWindow(userBackgroundColorSelectWindow);
+	};
+	createUserBackgroundColorButton(userBackgroundColorSelectWindow, user,onClickBackgroundColorButton);
+	// todo : user background color button create
+
+
     // post
     createUserPostTableData(userTableRawElement, user);
     createUserRealPostTableData(userTableRawElement, user);
@@ -135,6 +291,8 @@ function registUserTable(userName, user) {
     for (var i = 0; i < day; ++i) {
         addUserDayElement(userTableRawElement, i + 1, user);
     }
+
+	setUserBackgroundColorTable(user);
 }
 
 // 初期化時に使用する全userのtable再構築

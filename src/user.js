@@ -25,6 +25,9 @@ function userRegist(userName) {
 	// common
 	user.name = userName;
 	user.index = userIndex; // index登録
+	// background color 2つ
+	user.backgroundColor = "";
+	user.backgroundColor2 = "";
 	// image
 	user.characterImage = "";
 	// 役職

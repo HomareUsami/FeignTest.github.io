@@ -5,6 +5,7 @@ document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></scr
 document.write("<script src=\"src/table/tableHeader.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUser/tableUser.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/table/tableUserCommon.js\" charset=\"utf-8\"></script>");
 
 // user
 document.write("<script src=\"src/user.js\" charset=\"utf-8\"></script>");
@@ -29,7 +30,7 @@ function resetTable() {
     createAllUserTable(feignTableElement);
 
     // 仮 テスト追加が面倒だったので、削除する
-    if (0 && users.length == 0) {
+    if (1 && users.length == 0) {
         var userName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         var user = userRegist(userName);   // user登録
         // table対応
@@ -61,6 +62,7 @@ function addRawNowDayElement() {
         } else if (isUserTableRaw(tableRawElement)) {
             // userの場合
             addUserDayElement(tableRawElement,day,tableRawElement.user);
+			setUserBackgroundColorTable(tableRawElement.user);
         }
     }
 }

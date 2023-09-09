@@ -81,3 +81,7 @@ div.selectWindow ul li {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+p#version_info {
+	text-align: right;
+}

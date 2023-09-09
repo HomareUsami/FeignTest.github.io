@@ -33,14 +33,16 @@ exeのみを別の場所に配置したい場合は、exeをショートカッ�
 　　　　2人目<br>
 　　　　3人目<br>
 入力済みの名前をクリックすることで変更可能です。<br>
+入力済みの名前をクリックした状態で色を2色まで選択可能です<br>
 ※同一の名前を複数登録はできません<br>
 <img src="image/operation/user_operation.png" width="500px">
-<img src="image/operation/user_operation_rename.png" width="500px">
+<!--<img src="image/operation/user_operation_rename.png" width="500px">-->
+<img src="image/operation/user_operation_rename_color.png" width="500px">
 
 【CO役職】プレイヤーがCOする役職を選択することができます<br>
-未選択をクリックすることで入力をリセットすることが出来ます<br>
+「消」をクリックすることで入力をリセットすることが出来ます<br>
 【確定役職】スライドや吊られたり死んだりした人の役職を入力することが出来ます<br>
-未選択をクリックすることで入力をリセットすることが出来ます<br>
+「消」をクリックすることで入力をリセットすることが出来ます<br>
 <img src="image/operation/post_operation.png" width="500px">
 
 【1日目】役職行動を行ったプレイヤーのカラーを選択することが出来ます<br>
@@ -50,8 +52,8 @@ exeのみを別の場所に配置したい場合は、exeをショートカッ�
 <img src="image/operation/result_operation.png" width="500px">
 
 【翌日】クリックすると1日プラスされます<br>
-【reset】入力したものの全てがリセットされます<br>
-【日数リセット】1日以降の日にちがリセットされます<br>
+【reset】入力したものの全て（入力できるか箇所すべて）がリセットされます<br>
+【日数リセット】1日以降の日にちがリセットされ名前とカラーだけ入力された状態に戻ります<br>
 <img src="image/operation/utility_button_operation.png" width="500px">
 
 行をクリック長押しで任意の行と入れ替えることが出来ます（スマホは対応しておりません）<br>
@@ -77,3 +79,9 @@ exeのみを別の場所に配置したい場合は、exeをショートカッ�
   - やり方はある程度確立してるが別バグを生む可能性が高く手を出してない。
 - 選択のウィンドウが下にずれてしまう。
   - 原因は発覚してるが修正方法が不明瞭で色々と模索中。
+
+# ver
+## 1.000_0.001
+- version情報を追加 footerに記載するように 
+- 名前選択時に色選択＋決定ができるように対応。
+- 色選択を2種類選択できるように対応。
