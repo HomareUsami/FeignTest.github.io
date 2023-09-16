@@ -1,7 +1,7 @@
 // table共通javascript
 document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
 // user javascript
-document.write("<script src=\"src/user.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
 // character javascript
 document.write("<script src=\"src/character.js\" charset=\"utf-8\"></script>");
 // post javascript
@@ -12,6 +12,7 @@ document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\
 document.write("<script src=\"src/table/tableUser/tableUserPost.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUser/tableUserRealFool.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUser/tableUserDay.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
 
 // drag user table
 var dragUserBorderStyle = "2px solid blue"; // border
@@ -240,7 +241,7 @@ function registUserTable(userName, user) {
 					isError = true;
 					break;
 				}
-			}	
+			}
 		}
 
 		if(isError) {

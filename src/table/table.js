@@ -5,10 +5,11 @@ document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></scr
 document.write("<script src=\"src/table/tableHeader.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUser/tableUser.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUserCommon.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
 
 // user
-document.write("<script src=\"src/user.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
 
 document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
 

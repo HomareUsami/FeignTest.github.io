@@ -1,13 +1,13 @@
 document.write("<script src=\"src/table/table.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/user.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/reset.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/version/versionUtility.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/favorite/favorite.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/cookie/cookie.js\" charset=\"utf-8\"></script>");
 
 // window load event listner regist
 window.addEventListener("load", onLoadedWindow);
-
-var mainVersion = "1.000";
-var subVersion = "0.001";
-var localVersion = "0.000";
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -17,9 +17,11 @@ var localVersion = "0.000";
 // loaded window
 function onLoadedWindow() {
     console.log("window loaded");
+	console.log(document.cookie);
+	loadCookie();
     resetAll();
     var versionInfo = document.getElementById("version_info");
-	versionInfo.innerHTML = "ver." + mainVersion + "_" + subVersion + "_" + localVersion;
+	versionInfo.innerHTML = getVersionInfoString();
     var windowElement = document.getElementById("window");
     windowElement.onclick = (event) => {
         window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
@@ -46,6 +48,7 @@ function callResetDay() {
     var isReset = confirm("本当に日数をresetしていいですか？");
     if (!isReset) return; // cancelしてる
     resetDay();         // 日数リセット
+	onResetDayUser();
     resetTable();   // tableリセット
 }
 
@@ -140,22 +143,51 @@ function callAddDay() {
     addRawNowDayElement(); // table対応
 }
 
-///////////////////////////////////////////////////////////////////////////
-//
-// reset
-//
-///////////////////////////////////////////////////////////////////////////
-// all reset
-function resetAll() {
+// 外部から呼ばれるお気に入り登録処理
+function callFavoriteRegist() {
     window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
-    console.log("all reset");
+    var favoriteRegistName = document.getElementById("FavoriteRegist");
+	registFavorite(favoriteRegistName.value);
+}
 
-    // 日数を初期化
-    resetDay();
+// 外部から呼ばれるお気に入り読み込み処理
+function callFavoriteLoad() {
+	window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
+	var favoriteLoadSelected = document.getElementById("FavoriteLoadSelect");
+	var selectedIndex = favoriteLoadSelected.selectedIndex;
+	if (selectedIndex < 0 || favoriteLoadSelected.options.length <= selectedIndex) {
+		alert("読み込み出来るお気に入りが選択されていません");
+		return;
+	}
+	loadFavorite(favoriteLoadSelected.options[selectedIndex].text);
+}
+// 外部から呼ばれるお気に入りリネーム処理
+function callFavoriteRename() {
+    window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
 
-    // user reset
-    resetUser();
+    var favoriteRegistName = document.getElementById("FavoriteRegist");
 
-    // reset table
-    resetTable();
+	var favoriteLoadSelected = document.getElementById("FavoriteLoadSelect");
+	var selectedIndex = favoriteLoadSelected.selectedIndex;
+	if (selectedIndex < 0 || favoriteLoadSelected.options.length <= selectedIndex) {
+		alert("rename出来るお気に入りが選択されていません");
+		return;
+	}
+	var selectFavoriteName = favoriteLoadSelected.options[selectedIndex].text;
+
+	renameFavorite(selectFavoriteName,favoriteRegistName.value);
+}
+// 外部から呼ばれるお気に入り削除処理
+function callFavoriteDelete() {
+    window.event.stopPropagation(); // 親のclickイベントに伝播しないように。
+
+	var favoriteLoadSelected = document.getElementById("FavoriteLoadSelect");
+	var selectedIndex = favoriteLoadSelected.selectedIndex;
+	if (selectedIndex < 0 || favoriteLoadSelected.options.length <= selectedIndex) {
+		alert("rename出来るお気に入りが選択されていません");
+		return;
+	}
+	var selectFavoriteName = favoriteLoadSelected.options[selectedIndex].text;
+
+	deleteFavorite(selectFavoriteName);
 }

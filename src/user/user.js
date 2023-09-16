@@ -15,6 +15,14 @@ function resetUser() {
 	onDeleteUserFuncs = [];
 }
 
+function onResetDayUser() {
+	console.log("on reset day users");
+	for (var i = 0; i < users.length; ++i) {
+		users[i].backgroundColor = "";
+		users[i].backgroundColor2 = "";
+	}
+}
+
 // user regist
 function userRegist(userName) {
 	console.log("user登録 : " + userName);

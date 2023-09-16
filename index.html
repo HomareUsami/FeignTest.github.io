@@ -43,6 +43,17 @@
 			size="30"></textarea>
 		<button onclick="callUserRegistArray()">一括User登録</button>
 
+		<!--お気に入り-->
+		<br>
+		<h2 style="margin: 0px;">お気に入り</h2>
+		<input type="text" name="FavoriteRegist" size="30" id="FavoriteRegist" placeholder="お気に入り名">
+		<button onclick="callFavoriteRegist()">登録</button>
+		<br>
+		<select name="FavoriteLoadSelect" id="FavoriteLoadSelect" style="min-width: 240px;"></select>
+		<button onclick="callFavoriteLoad()">読み込み</button>
+		<button onclick="callFavoriteRename()">rename</button>
+		<button onclick="callFavoriteDelete()">delete</button>
+
 		<!--余裕があればtreenode型に変更したい-->
 		<h2 style="margin: 0px;">説明</h2>
 		<p style="margin: 0px;">FEIGNのメモ専用サイトとなっております</p>

@@ -1,8 +1,9 @@
 // post script
-document.write("<script src=\"src/user.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
 document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
+document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
 
 // userName系
 var userRegistInputId = "UserRegist";
