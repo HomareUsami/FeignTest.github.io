@@ -1,4 +1,6 @@
-document.write("<script src=\"src/saveData/saveDataClass.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/saveData/saveDataClass.js");
+
+// document.write("<script src=\"src/saveData/saveDataClass.js\" charset=\"utf-8\"></script>");
 
 function createSaveData(key, value) {
 

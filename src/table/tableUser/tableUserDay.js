@@ -1,7 +1,11 @@
 // table共通javascript
-document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserActionDay.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserResultDay.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/tableCommon.js");
+writeDocumentPath("src/table/tableUser/tableUserActionDay.js");
+writeDocumentPath("src/table/tableUser/tableUserResultDay.js");
+
+// document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserActionDay.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserResultDay.js\" charset=\"utf-8\"></script>");
 
 
 // user day element

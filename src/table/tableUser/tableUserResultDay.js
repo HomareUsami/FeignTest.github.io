@@ -1,9 +1,16 @@
-document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/tableCommon.js");
+writeDocumentPath("src/table/tableUser/tableUserCommon.js");
+writeDocumentPath("src/table/tableUtility.js");
+writeDocumentPath("src/user/user.js");
+writeDocumentPath("src/post.js");
+writeDocumentPath("src/utilityElement.js");
+
+// document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
 
 var userDayResultTableRawId = "userDayResult";
 
@@ -351,7 +358,7 @@ function addUserDayResultElement(userTableRawElement, day, user) {
 			return item.user == user;
 		});
 		for(var i = 0; i < deleteUserElement.length; ++i) {
-			if(updateUserElement[i].deleteUser == null) continue;
+			if(deleteUserElement[i].deleteUser == null) continue;
 			deleteUserElement[i].deleteUser();
 		}
 	});

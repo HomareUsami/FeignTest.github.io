@@ -1,6 +1,9 @@
-document.write("<script src=\"src/favorite/favorite.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/saveData/saveData.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/saveData/loadData.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/favorite/favorite.js");
+writeDocumentPath("src/saveData/saveData.js");
+writeDocumentPath("src/saveData/loadData.js");
+// document.write("<script src=\"src/favorite/favorite.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/saveData/saveData.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/saveData/loadData.js\" charset=\"utf-8\"></script>");
 
 function saveCokkie() {
 	if(navigator.cookieEnabled) {
@@ -28,7 +31,11 @@ function saveCokkie() {
 
 	console.log("save data:\n" + saveDatas.toConvertString().value);
 }
-onSaveFavoriteCookie = saveCokkie;
+if(onSaveFavoriteCookie != null && onSaveFavoriteCookie == undefined) {
+	alert("onSaveFavoriteCookie undefined");
+} else {
+	onSaveFavoriteCookie = saveCokkie;
+}
 
 function loadCookie() {
 	console.log("prev load cookie:\n" + document.cookie);

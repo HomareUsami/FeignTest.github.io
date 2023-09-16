@@ -1,4 +1,5 @@
-document.write("<script src=\"src/saveData/loadDataClass.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/saveData/loadDataClass.js");
+// document.write("<script src=\"src/saveData/loadDataClass.js\" charset=\"utf-8\"></script>");
 
 // load dataにkeyが存在するかどうかをチェック
 function isExistKeyLoadData(loadString, key) {

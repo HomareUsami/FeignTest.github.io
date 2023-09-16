@@ -1,12 +1,20 @@
-document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUser.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/utility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/reset.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/saveData/saveDataUtility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/saveData/loadDataUtility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/cookie/cookieUtility.js\" charset=\"utf-8\"></script>");
-//document.write("<script src=\"src/cookie/cookie.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/user/user.js");
+writeDocumentPath("src/table/tableUser/tableUser.js");
+writeDocumentPath("src/utility.js");
+writeDocumentPath("src/reset.js");
+writeDocumentPath("src/utilityElement.js");
+writeDocumentPath("src/saveData/saveDataUtility.js");
+writeDocumentPath("src/saveData/loadDataUtility.js");
+writeDocumentPath("src/cookie/cookieUtility.js");
+
+// document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUser.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/utility.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/reset.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/saveData/saveDataUtility.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/saveData/loadDataUtility.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/cookie/cookieUtility.js\" charset=\"utf-8\"></script>");
 
 var favorites = [];
 var lastLoadFavoriteName = "";

@@ -1,7 +1,9 @@
 // table共通javascript
-document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/tableCommon.js");
+// document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
 // character javascript
-document.write("<script src=\"src/character.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/character.js");
+// document.write("<script src=\"src/character.js\" charset=\"utf-8\"></script>");
 
 var userColorTableRawId = "userColor";
 

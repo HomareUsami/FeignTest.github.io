@@ -1,4 +1,6 @@
-document.write("<script src=\"src/version/version.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/version/version.js");
+
+// document.write("<script src=\"src/version/version.js\" charset=\"utf-8\"></script>");
 
 function convertVersionString(versionNo) {
 	return versionNo.toFixed(4);

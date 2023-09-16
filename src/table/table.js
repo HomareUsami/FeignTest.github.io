@@ -1,17 +1,33 @@
 // table
 
 // table関連javascript
-document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableHeader.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUser.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/tableCommon.js");
+writeDocumentPath("src/table/tableHeader.js");
+writeDocumentPath("src/table/tableUser/tableUser.js");
+writeDocumentPath("src/table/tableUtility.js");
+writeDocumentPath("src/table/tableUser/tableUserCommon.js");
+
+// utiliry
+writeDocumentPath("src/utilityElement.js");
 
 // user
-document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/user/user.js");
 
-document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
+// day
+writeDocumentPath("src/day.js");
+
+
+// document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableHeader.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUser.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUtility.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
+
+// user
+// document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
+
+// document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
 
 // table reset
 function resetTable() {

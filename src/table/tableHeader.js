@@ -1,4 +1,6 @@
-document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/day.js");
+
+// document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
 
 var tableHeaderId = "tableHeader";  // table Header id
 

@@ -1,5 +1,7 @@
 // table共通javascript
-document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/tableCommon.js");
+
+// document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
 
 var userRealFoolTableRawId = "userRealFool";
 

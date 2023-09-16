@@ -1,6 +1,6 @@
 var mainVersion = 1.0000;
 var subVersion = 0.0012;
-var localVersion = 0.0000;
+var localVersion = 0.0001;
 
 
 // version
@@ -13,3 +13,5 @@ var localVersion = 0.0000;
 // 1.0000_0.0011_0.0000 : 日数reset時に色情報のリセットも行うように対応
 // 1.0000_0.0011_0.0001 : cookie機能導入中 お気に入り機能の保存と破棄を作成中
 // 1.0000_0.0012_0.0000 : お気に入り機能を本実装して導入 cookie情報を使用可能に
+
+// 1.0000_0.0012_0.0001 : document.writeを何度も記述しないような形式に変更 pragma onceのようなもの

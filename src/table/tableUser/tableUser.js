@@ -1,18 +1,29 @@
 // table共通javascript
-document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/tableCommon.js");
+// document.write("<script src=\"src/table/tableCommon.js\" charset=\"utf-8\"></script>");
 // user javascript
-document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/user/user.js");
+// document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
 // character javascript
-document.write("<script src=\"src/character.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/character.js");
+// document.write("<script src=\"src/character.js\" charset=\"utf-8\"></script>");
 // post javascript
-document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
-
-document.write("<script src=\"src/table/tableUser/tableUserColor.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserPost.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserRealFool.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserDay.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/post.js");
+// document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
+// tableUser
+writeDocumentPath("src/table/tableUser/tableUserColor.js");
+writeDocumentPath("src/table/tableUser/tableUserCommon.js");
+writeDocumentPath("src/table/tableUser/tableUserPost.js");
+writeDocumentPath("src/table/tableUser/tableUserRealFool.js");
+writeDocumentPath("src/table/tableUser/tableUserDay.js");
+// utility
+writeDocumentPath("src/utilityElement.js");
+// document.write("<script src=\"src/table/tableUser/tableUserColor.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserPost.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserRealFool.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserDay.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/utilityElement.js\" charset=\"utf-8\"></script>");
 
 // drag user table
 var dragUserBorderStyle = "2px solid blue"; // border

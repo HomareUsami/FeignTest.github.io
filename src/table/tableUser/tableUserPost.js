@@ -1,6 +1,9 @@
 // post javascript
-document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/post.js");
+writeDocumentPath("src/table/tableUser/tableUserCommon.js");
+
+// document.write("<script src=\"src/post.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/tableUser/tableUserCommon.js\" charset=\"utf-8\"></script>");
 
 var userPostTableRawId = "userPost";
 var userPostImageId = "userPostImage";

@@ -1,10 +1,17 @@
-document.write("<script src=\"src/table/table.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/reset.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/version/versionUtility.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/favorite/favorite.js\" charset=\"utf-8\"></script>");
-document.write("<script src=\"src/cookie/cookie.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/table/table.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/user/user.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/day.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/reset.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/version/versionUtility.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/favorite/favorite.js\" charset=\"utf-8\"></script>");
+// document.write("<script src=\"src/cookie/cookie.js\" charset=\"utf-8\"></script>");
+writeDocumentPath("src/table/table.js");
+writeDocumentPath("src/user/user.js");
+writeDocumentPath("src/day.js");
+writeDocumentPath("src/reset.js");
+writeDocumentPath("src/version/versionUtility.js");
+writeDocumentPath("src/favorite/favorite.js");
+writeDocumentPath("src/cookie/cookie.js");
 
 // window load event listner regist
 window.addEventListener("load", onLoadedWindow);
